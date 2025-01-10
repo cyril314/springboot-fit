@@ -1,6 +1,7 @@
 package com.fit;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -16,7 +17,7 @@ public class FitApplication {
         ConfigurableApplicationContext run = SpringApplication.run(FitApplication.class, args);
         String ip = InetAddress.getLocalHost().getHostAddress();
         String port = System.getenv("POST");
-        if (port == null || port.isEmpty()) {
+        if (Strings.isEmpty(port)) {
             port = run.getEnvironment().getProperty("server.port");
         }
         log.info("\n---------------------------------------------------------\n" +
