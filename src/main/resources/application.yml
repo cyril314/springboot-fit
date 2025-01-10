@@ -72,8 +72,10 @@ spring:
   thymeleaf:
     enabled: false
     cache: false
-    encoding: UTF-8
     mode: HTML
+    encoding: utf-8
+    suffix: .html
+    prefix: classpath:/templates/
     servlet:
       content-type: text/html
 
