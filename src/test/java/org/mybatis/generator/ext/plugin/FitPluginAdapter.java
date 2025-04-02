@@ -165,7 +165,7 @@ public class FitPluginAdapter extends PluginAdapter {
             XmlElement isNotNullElement = new XmlElement("if");
             sb.setLength(0);
             sb.append(introspectedColumn.getJavaProperty() + " != null");
-            if (!introspectedColumn.getJavaProperty().equals("creatdate")) {//mybatis保存日期报错
+            if (introspectedColumn.getFullyQualifiedJavaType().equals(FullyQualifiedJavaType.getStringInstance())) {//mybatis保存日期报错
                 sb.append(" and ");
                 sb.append(introspectedColumn.getJavaProperty() + " != ''");
             }
