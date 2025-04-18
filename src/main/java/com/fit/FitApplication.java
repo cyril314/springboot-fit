@@ -20,9 +20,8 @@ public class FitApplication {
         if (Strings.isEmpty(port)) {
             port = run.getEnvironment().getProperty("server.port");
         }
-        log.info("\n---------------------------------------------------------\n" +
-                "Application Admin is running! Access URLs:\n\t" +
-                "Local: \t\thttp://localhost:{}/\n\tExternal:\t{}://{}:{}/" +
-                "\n-----------------页面请部署 admin-web----------------------", port, "http", ip, port);
+        log.info("---------------------------------------------------------");
+        log.info("Access URLs:\n\tLocal: \t\thttp://localhost:{}/\n\tExternal:\t{}://{}:{}/", port, "http", ip, port);
+        log.info("---------------------- admin-web ------------------------");
     }
 }
